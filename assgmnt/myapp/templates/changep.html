@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript">
+    function password(){
+
+        neww = document.getElementById('new').value;
+        change = document.getElementById('change').value;
+        pass_label = document.getElementById('lab');
+
+        if(neww != change){
+            pass_label.innerHTML = 'password not match';
+            return false;
+        }
+
+
+    }
+
+</script>
+</head>
+<body>
+    <form method="POST" action="/myapp/change/">
+         {% csrf_token %}
+    <input type="password" id="current" name="current">current password<br>
+    <input type="password" id="new" name="new">new password<br>
+    <input type="password" id="change" name="change">change password<br>
+    <label id="lab" style="color: red;"></label>
+    <input type="submit" id="button" value="submit" onclick="return password()">
+</form>
+</body>
+
+
+</html>

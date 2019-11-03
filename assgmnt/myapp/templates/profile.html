@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+      
+        <form method="POST" action="/myapp/profile/">
+            {% csrf_token %}
+        <!-- first name<input type="text" name="" id=""><br>
+        last name<input type="text" name="" id=""><br>
+        profile_photo<input type="file" name="file"><br> -->
+
+      <p>firstname : {{ id.firstname }} </p>
+
+      <p>secondname: {{ id.secondname }}</p>
+
+      <p>date of birth:  {{ id.dob }} </p> 
+
+      <p>gender: {{ id.gender }} </p> 
+       
+      <a href="/editprofe/">edit_profile</a>
+
+    </form>
+    </body>
+</html>

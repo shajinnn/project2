@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btn').click(function(){
+
+                data = $('#prd').val();
+                $.ajax({
+
+                    url: 'http://127.0.0.1:8000/Restapi/product/',
+                    type: 'POST',
+                    data:{"name":data},
+                    success:function(response) {
+                        
+                        alert(response)
+
+                    },    
+                    error:function(err){
+                        console.log(err);
+                    }
+
+                        
+                    
+                });
+                
+
+
+            });
+
+
+
+        }
+        );
+
+
+        </script>
+    </header>
+    <body>
+        <form>
+            <input type="text" value="" name="" id="prd">
+            <input type="button" id="btn" value="submit">
+        </form>
+    </body>
+</html>
