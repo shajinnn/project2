@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		h3{
+			color: #003399;
+			padding-top: 20px;
+			padding-bottom: 5px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		.box{
+			color: red;
+			height: 10px;
+			width: 50px;
+			border: 1px;
+			border-color: red;
+		}
+		a{
+	  	text-decoration: none;
+	  	  }
+	  	  #fb{
+	  	  	margin-left: 0px;
+	  	  	height: 60px;
+	  	  	width: 100%;
+	  	  	background-color: #3b5998;
+	  	  }
+	  	  #img1{
+	  	  	height: 40px;
+	  	  	width: 150px;
+	  	  	margin-left: 150px;
+	  	  	margin-top: 10px
+	  	  }
+	  	  #img2{
+	  	  	height: 80px;
+	  	  	width: 80px;
+	  	  	margin-left: 180px;
+	  	  	margin-top: 10px;
+	  	  }
+	  	  #img3{
+	  	  	height: 130px;
+	  	  	width: 100%;
+	  	  	margin-left: 200px;
+	  	  }
+	  	  #bg{
+	  	  	background-color: #b3b3ff;
+	  	  	height: 400px;
+	  	  	margin-top: 0%;
+	  	  	padding-top: 60px;
+
+	  	  }
+	  	  #inside{
+	  	  	height: 280px;
+	  	  	width: 980px;
+	  	  	background-color: white;
+	  	  	margin-left: 200px;
+	   	  }
+	   	  table{
+	   	  	padding-left: 100px;
+	   	  }
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#fun').click(function(){
+				user = $('#username').val();
+				pass = $('#password').val();
+					$.ajax({
+					url:'http://baabtra.pythonanywhere.com/loginApi/',
+					type:'POST',
+					data:{"username":user,"password":pass},
+					success: function(response){
+						console.log(response);
+						code =response['ResponseCode']
+            			 if (code == 200) {
+            			 	window.location.href='successfullylogin.html'
+                         }
+					
+					},
+					error: function(error){
+						console.log(error);
+					}
+				 });
+			});
+		});
+	</script>	
+</head>
+<body>
+	<div id="fb">
+	<img src="C:\Users\DELL\Desktop\htmlassignment\fb_logo - Copy.png" id="img1">
+	<img src="C:\Users\DELL\Desktop\html\sign up1.png">
+</div>
+		<div id="bg">
+		<div id="inside">
+	<h3>Facebook Login
+	<hr></h3>
+	<table>
+	<tr>
+	<td>Email or phone:</td>
+	<td><input type="" name="" id="username" style="border-color: red"> <span>The email address that you've entered doesn't match any account.<span><b>Sign up for an account</b></label></td></td>
+	</tr>
+	<tr><td>
+	Password:</td>
+	<td><input type="Password" name="" id="password" ></td></tr>
+	<tr><td></td><td><input type="checkbox" name="">keep me logged in</td></tr>
+	<tr><td></td><td><input type="button" name="" value="Log In" id="fun" style="background-color: #5c5cd6"> or 
+		<a href="">sign up for facebook </a></td></tr>
+		<tr><td></td><td><a href="">Forgotten password?</td></tr>
+	</table>
+	</div>
+	</div>
+	<div>
+		<img src="C:\Users\DELL\Desktop\html\fb.png" id="img3">
+	</div>
+	
+</body>
+</html>
