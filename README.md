@@ -1,2 +1,6 @@
 # project2
-wedes folder contains responsive web  
+webdes folder contains responsive web 
+
+project folder have django project its on development
+created for study purpose
+
