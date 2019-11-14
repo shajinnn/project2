@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		
+	<title>After Successful Login</title>
+	<style type="text/css">
+		.navbar{
+			width: 100%;
+			height: 50px;
+			background-color: #142170;
+			color: white;
+		}
+		#search{
+			margin-left: 40px;
+			margin-top: 10px;
+			height: 25px;
+			width: 500px;
+		}
+		#part{
+			margin-left: 10px;
+			width: 200px;
+			height: 30px;
+			color: #868383;
+		}
+		.body1{
+			float: left;
+		}
+		.body2{
+			float: left;
+			margin-top: 20px;
+			margin-left: 240px;
+			position: absolute;
+			width: 750px;
+			height: 210px;
+			/* -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25); */
+		}
+		.body3{
+			margin-top: 240px;
+			margin-left: 240px;
+			position: absolute;
+			width: 750px;
+			height: 600px;
+			/* -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25); */
+		}
+		.body4{
+			margin-top: 20px;
+			margin-left: 1000px;
+			width: 300px;
+			height: 570px;
+			position: absolute;
+			font-size: 15px;
+			/* -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25); */
+		}
+		#column1{
+			padding: 10px;
+			color: #1b6192
+		}
+		#post{
+			height: 100px;
+			outline: none;
+			width: 580px;
+			border: white;
+		}
+		#ads{
+			width:280px;
+			border: white; 
+			background-color: #142170;
+		}
+		a{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar">
+		<div class="navbar-header">
+		<div class="input-group input-group-sm">	
+		<input type="text" class="form-control" placeholder="Search Facebook" id="search">
+		<div class="input-group-btn">
+		<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+		</div>
+		<img src=""> Haris 
+		</div>
+			  
+			
+		
+	</nav>
+</div>
+<div class="col-sm-2 sidenav">
+
+	<div id="part"><img src="">Haris Np</div>
+	<div id="part"> <a href="/myapp/profile">view profile</a> </div>
+
+	<div id="part"><img src="">Edit Profile</div>
+	<div id="part"> <a href="/myapp/change">change password</a> </div>
+
+	<div id="part"><img src=""></div>
+	<div id="part"> <a href="/myapp/addfrined">Add friend</a> </div>
+
+</div>
+<div class="col-sm-8 text-left"> 
+		<form method="POST" action="/myapp/imgeupload/" enctype="multipart/form-data">{% csrf_token %}
+		<img src="{{MEDIA_ROOT}}/{{upload.image.url}}">
+		<input type="file" value="image_upload" name="uploadd">
+
+		<input type="submit" value="upload" name="sbmit"><br>
+		</form>
+	<div id="column1"><img src=""> Update Status   | <img src=""> Add Photos/Video   | <img src=""> Write Note</div>
+	<hr>
+	<div><img src=""><textarea placeholder="What's on your mind?" id="post"></textarea></div>
+</div>
+
+	
+	
+<!-- </div>
+<div class="col-sm-2 sidenav">
+		<div class="well">
+		  <p>ADS</p>
+		</div>
+		<div class="well">
+		  <p>ADS</p>
+		</div> </div> -->
+	 
+
+<div class="body4">
+	<select value="YOUR ADS" id="ads">
+		<option>YOUR ADS</option>
+	<option><div id="opt"></div></option>
+	<option><div id="opt"></div></option>
+	
+
+</select>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
